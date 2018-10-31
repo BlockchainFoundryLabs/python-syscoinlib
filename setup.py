@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-from bitcoin import __version__
+from syscoin import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, 'README.md')) as f:
@@ -11,18 +11,18 @@ with open(os.path.join(here, 'README.md')) as f:
 
 requires = []
 
-setup(name='python-bitcoinlib',
+setup(name='python-syscoinlib',
       version=__version__,
-      description='The Swiss Army Knife of the Bitcoin protocol.',
+      description='The Swiss Army Knife of the Syscoin protocol.',
       long_description=README,
       classifiers=[
           "Programming Language :: Python",
           "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
       ],
-      url='https://github.com/petertodd/python-bitcoinlib',
-      keywords='bitcoin',
+      url='https://github.com/BlockchainFoundryLabs/python-syscoinlib',
+      keywords='syscoin',
       packages=find_packages(),
       zip_safe=False,
       install_requires=requires,
-      test_suite="bitcoin.tests"
+      test_suite="syscoin.tests"
      )

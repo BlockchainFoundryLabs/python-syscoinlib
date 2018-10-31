@@ -1,5 +1,5 @@
 #!/bin/bash
-if ! [[ "$2" =~ ^(git@)?(www.)?github.com(:|/)petertodd/python-bitcoinlib(.git)?$ ]]; then
+if ! [[ "$2" =~ ^(git@)?(www.)?github.com(:|/)petertodd/python-syscoinlib(.git)?$ ]]; then
     exit 0
 fi
 

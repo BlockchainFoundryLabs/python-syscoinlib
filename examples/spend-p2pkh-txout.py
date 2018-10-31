@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-# Copyright (C) 2014 The python-bitcoinlib developers
+# Copyright (C) 2014 The python-syscoinlib developers
 #
-# This file is part of python-bitcoinlib.
+# This file is part of python-syscoinlib.
 #
 # It is subject to the license terms in the LICENSE file found in the top-level
 # directory of this distribution.
 #
-# No part of python-bitcoinlib, including this file, may be copied, modified,
+# No part of python-syscoinlib, including this file, may be copied, modified,
 # propagated, or distributed except according to the terms contained in the
 # LICENSE file.
 
@@ -20,21 +20,21 @@ if sys.version_info.major < 3:
 
 import hashlib
 
-from bitcoin import SelectParams
-from bitcoin.core import b2x, lx, COIN, COutPoint, CMutableTxOut, CMutableTxIn, CMutableTransaction, Hash160
-from bitcoin.core.script import CScript, OP_DUP, OP_HASH160, OP_EQUALVERIFY, OP_CHECKSIG, SignatureHash, SIGHASH_ALL
-from bitcoin.core.scripteval import VerifyScript, SCRIPT_VERIFY_P2SH
-from bitcoin.wallet import CBitcoinAddress, CBitcoinSecret
+from syscoin import SelectParams
+from syscoin.core import b2x, lx, COIN, COutPoint, CMutableTxOut, CMutableTxIn, CMutableTransaction, Hash160
+from syscoin.core.script import CScript, OP_DUP, OP_HASH160, OP_EQUALVERIFY, OP_CHECKSIG, SignatureHash, SIGHASH_ALL
+from syscoin.core.scripteval import VerifyScript, SCRIPT_VERIFY_P2SH
+from syscoin.wallet import CSyscoinAddress, CSyscoinSecret
 
 SelectParams('mainnet')
 
 # Create the (in)famous correct brainwallet secret key.
 h = hashlib.sha256(b'correct horse battery staple').digest()
-seckey = CBitcoinSecret.from_secret_bytes(h)
+seckey = CSyscoinSecret.from_secret_bytes(h)
 
 # Same as the txid:vout the createrawtransaction RPC call requires
 #
-# lx() takes *little-endian* hex and converts it to bytes; in Bitcoin
+# lx() takes *little-endian* hex and converts it to bytes; in Syscoin
 # transaction hashes are shown little-endian rather than the usual big-endian.
 # There's also a corresponding x() convenience function that takes big-endian
 # hex and converts it to bytes.
@@ -52,9 +52,9 @@ txin = CMutableTxIn(COutPoint(txid, vout))
 # corresponds to the secret key we generated above.
 txin_scriptPubKey = CScript([OP_DUP, OP_HASH160, Hash160(seckey.pub), OP_EQUALVERIFY, OP_CHECKSIG])
 
-# Create the txout. This time we create the scriptPubKey from a Bitcoin
+# Create the txout. This time we create the scriptPubKey from a Syscoin
 # address.
-txout = CMutableTxOut(0.001*COIN, CBitcoinAddress('1C7zdTfnkzmr13HfA2vNm5SJYRK6nEKyq8').to_scriptPubKey())
+txout = CMutableTxOut(0.001*COIN, CSyscoinAddress('1C7zdTfnkzmr13HfA2vNm5SJYRK6nEKyq8').to_scriptPubKey())
 
 # Create the unsigned transaction.
 tx = CMutableTransaction([txin], [txout])

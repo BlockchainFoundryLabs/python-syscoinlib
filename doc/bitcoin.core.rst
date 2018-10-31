@@ -1,4 +1,4 @@
-bitcoin.core
+syscoin.core
 ============
 
 Everything consensus critical is found in the core subpackage.
@@ -6,25 +6,25 @@ Everything consensus critical is found in the core subpackage.
 :mod:`core`
 -----------
 
-.. automodule:: bitcoin.core
+.. automodule:: syscoin.core
 
 :mod:`key`
 ----------
 
-.. automodule:: bitcoin.core.key
+.. automodule:: syscoin.core.key
 
 :mod:`script`
 -------------
 
-.. automodule:: bitcoin.core.script
+.. automodule:: syscoin.core.script
 
 :mod:`scripteval`
 -----------------
 
-.. automodule:: bitcoin.core.scripteval
+.. automodule:: syscoin.core.scripteval
 
 :mod:`serialize`
 ----------------
 
-.. automodule:: bitcoin.core.serialize
+.. automodule:: syscoin.core.serialize
 

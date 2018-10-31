@@ -1,47 +1,47 @@
-bitcoin
+syscoin
 =======
 
-:mod:`bitcoin`
+:mod:`syscoin`
 --------------
 
-.. automodule:: bitcoin
+.. automodule:: syscoin
 
 :mod:`base58`
 -------------
 
-.. automodule:: bitcoin.base58
+.. automodule:: syscoin.base58
 
 :mod:`bloom`
 ------------
 
-.. automodule:: bitcoin.bloom
+.. automodule:: syscoin.bloom
 
 :mod:`messages`
 ---------------
 
-.. automodule:: bitcoin.messages
+.. automodule:: syscoin.messages
 
 :mod:`net`
 ----------
 
-.. automodule:: bitcoin.net
+.. automodule:: syscoin.net
 
 :mod:`rpc`
 ----------
 
-.. automodule:: bitcoin.rpc
+.. automodule:: syscoin.rpc
 
 :mod:`signature`
 ----------------
 
-.. automodule:: bitcoin.signature
+.. automodule:: syscoin.signature
 
 :mod:`signmessage`
 ------------------
 
-.. automodule:: bitcoin.signmessage
+.. automodule:: syscoin.signmessage
 
 :mod:`wallet`
 -------------
 
-.. automodule:: bitcoin.wallet
+.. automodule:: syscoin.wallet
