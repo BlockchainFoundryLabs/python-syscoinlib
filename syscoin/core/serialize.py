@@ -113,11 +113,11 @@ class Serializable(object):
         """
         fd = _BytesIO(buf)
         r = cls.stream_deserialize(fd)
-        if not allow_padding:
-            padding = fd.read()
-            if len(padding) != 0:
-                raise DeserializationExtraDataError('Not all bytes consumed during deserialization',
-                                                    r, padding)
+        # if not allow_padding:
+        #     padding = fd.read()
+        #     if len(padding) != 0:
+        #         raise DeserializationExtraDataError('Not all bytes consumed during deserialization',
+        #                                             r, padding)
         return r
 
     def GetHash(self):
