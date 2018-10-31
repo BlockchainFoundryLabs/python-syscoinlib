@@ -103,7 +103,7 @@ class Serializable(object):
         return f.getvalue()
 
     @classmethod
-    def deserialize(cls, buf, allow_padding=False):
+    def deserialize(cls, buf, allow_padding=True):
         """Deserialize bytes, returning an instance
 
         allow_padding - Allow buf to include extra padding. (default False)
