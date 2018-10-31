@@ -16,40 +16,32 @@ import syscoin.core
 # Note that setup.py can break if __init__.py imports any external
 # dependencies, as these might not be installed when setup.py runs. In this
 # case __version__ could be moved to a separate version.py and imported here.
-__version__ = '0.7.1-SNAPSHOT'
+__version__ = '0.7.2'
 
 class MainParams(syscoin.core.CoreMainParams):
     MESSAGE_START = b'\xf9\xbe\xb4\xd9'
-    DEFAULT_PORT = 8333
-    RPC_PORT = 8332
-    DNS_SEEDS = (('syscoin.sipa.be', 'seed.syscoin.sipa.be'),
-                 ('bluematt.me', 'dnsseed.bluematt.me'),
-                 ('dashjr.org', 'dnsseed.syscoin.dashjr.org'),
-                 ('syscoinstats.com', 'seed.syscoinstats.com'),
-                 ('xf2.org', 'bitseed.xf2.org'),
-                 ('syscoin.jonasschnelli.ch', 'seed.syscoin.jonasschnelli.ch'))
-    BASE58_PREFIXES = {'PUBKEY_ADDR':0,
+    DEFAULT_PORT = 8369
+    RPC_PORT = 8368
+    DNS_SEEDS = ()
+    BASE58_PREFIXES = {'PUBKEY_ADDR':63,
                        'SCRIPT_ADDR':5,
                        'SECRET_KEY' :128}
 
 class TestNetParams(syscoin.core.CoreTestNetParams):
-    MESSAGE_START = b'\x0b\x11\x09\x07'
-    DEFAULT_PORT = 18333
-    RPC_PORT = 18332
-    DNS_SEEDS = (('testnetsyscoin.jonasschnelli.ch', 'testnet-seed.syscoin.jonasschnelli.ch'),
-                 ('petertodd.org', 'seed.tsys.petertodd.org'),
-                 ('bluematt.me', 'testnet-seed.bluematt.me'),
-                 ('syscoin.schildbach.de', 'testnet-seed.syscoin.schildbach.de'))
-    BASE58_PREFIXES = {'PUBKEY_ADDR':111,
+    MESSAGE_START = b'\xce\xe2\xca\xff'
+    DEFAULT_PORT = 18369
+    RPC_PORT = 18368
+    DNS_SEEDS = ()
+    BASE58_PREFIXES = {'PUBKEY_ADDR':65,
                        'SCRIPT_ADDR':196,
                        'SECRET_KEY' :239}
 
 class RegTestParams(syscoin.core.CoreRegTestParams):
-    MESSAGE_START = b'\xfa\xbf\xb5\xda'
-    DEFAULT_PORT = 18444
-    RPC_PORT = 18332
+    MESSAGE_START = b'\xe2\xca\xff\xce'
+    DEFAULT_PORT = 18369
+    RPC_PORT = 18368
     DNS_SEEDS = ()
-    BASE58_PREFIXES = {'PUBKEY_ADDR':111,
+    BASE58_PREFIXES = {'PUBKEY_ADDR':65,
                        'SCRIPT_ADDR':196,
                        'SECRET_KEY' :239}
 
